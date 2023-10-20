@@ -20,6 +20,8 @@ int DocumentManager::search(string name) {
 
 bool DocumentManager::borrowDocument(int docid, int patronID) {
     if(mapPatron.find(patronID) == mapPatron.end()) return false;
+    if(mapID.at(docid) == mapID.end()) return false;
+    
 
     if (mapID.at(docid) == 0) return false;
 
