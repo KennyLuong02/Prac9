@@ -23,7 +23,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
     if(mapID.find(docid) == mapID.end()) return false;
     
 
-    // if (mapID.at(docid) == 0) return false;
+    if (mapID.at(docid) == 0) return false;
 
     mapID[docid] = mapID[docid] - 1;
     return true;
@@ -31,5 +31,5 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
 
 void DocumentManager::returnDocument(int docid, int patronID) {
     mapID[docid] = mapID[docid]++;
-    mapPatron[patronID] = 0;
+    // mapPatron[patronID] = 0;
 }
